@@ -1,0 +1,13 @@
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials.*
+secrets.*
+__pycache__/
+.ipynb_checkpoints/
+.venv/
+venv/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,814 @@
+{
+  "wbs": [
+    [
+      "1 Initiation",
+      "1.1",
+      "Confirm project scope and charter",
+      "Confirm one-way Excel-to-Odoo product-import scope, assumptions, objectives, limits and acceptance targets.",
+      "Approved scope baseline and decision log.",
+      "PM / BA",
+      4.8,
+      6,
+      7.2
+    ],
+    [
+      "1 Initiation",
+      "1.2",
+      "Identify stakeholders and collect requirements",
+      "Interview or structured-review the instructor, an ERP data-entry user and Odoo administrator; record needs and constraints.",
+      "Requirements and stakeholder register updated with evidence.",
+      "PM / BA",
+      11.2,
+      14,
+      16.8
+    ],
+    [
+      "1 Initiation",
+      "1.3",
+      "Profile Excel data and Odoo product fields",
+      "Inspect representative rows, required columns, types, duplicate SKU patterns and target Odoo fields.",
+      "Data profile, sample file and field inventory.",
+      "PM / BA",
+      9.6,
+      12,
+      14.4
+    ],
+    [
+      "1 Initiation",
+      "1.4",
+      "Prove Odoo API access",
+      "Verify sandbox availability, authentication, permissions and one safe test write; document fallback if unavailable.",
+      "Connection proof or a documented no-access decision.",
+      "Technical architect",
+      11.2,
+      14,
+      16.8
+    ],
+    [
+      "2 Discovery",
+      "2.1",
+      "Approve data dictionary and acceptance criteria",
+      "Specify source-to-target fields, validation rules, duplicate policy and measurable acceptance evidence.",
+      "Signed-off mapping and acceptance checklist.",
+      "PM / BA",
+      9.6,
+      12,
+      14.4
+    ],
+    [
+      "3 Design",
+      "3.1",
+      "Design modular middleware architecture",
+      "Define file intake, validation, mapping, Odoo adapter, batch handling, logging and extension points.",
+      "Architecture diagram and interface boundaries.",
+      "Technical architect",
+      9.6,
+      12,
+      14.4
+    ],
+    [
+      "3 Design",
+      "3.2",
+      "Design security and failure handling",
+      "Define credential handling, least privilege, safe retry boundaries, idempotency key and manual reconciliation state.",
+      "Security and error-handling design.",
+      "Technical architect",
+      6.4,
+      8,
+      9.6
+    ],
+    [
+      "4 Build",
+      "4.1",
+      "Build Excel parser",
+      "Read the agreed .xlsx template and produce normalized product records with source row references.",
+      "Parser with row-level source tracking.",
+      "Integration developer",
+      16,
+      20,
+      24
+    ],
+    [
+      "4 Build",
+      "4.2",
+      "Build validation and duplicate checks",
+      "Check required fields, numeric types, allowed values and duplicates in file or target; reject unsafe rows.",
+      "Validation service with actionable row-level errors.",
+      "QA / documentation",
+      16,
+      20,
+      24
+    ],
+    [
+      "4 Build",
+      "4.3",
+      "Build field mapping and transformation",
+      "Map normalized records to target product fields using an editable mapping configuration.",
+      "Mapping module and documented field map.",
+      "Integration developer",
+      14.4,
+      18,
+      21.6
+    ],
+    [
+      "4 Build",
+      "4.4",
+      "Build Odoo adapter and authentication",
+      "Implement the selected API adapter and isolated credential configuration for the test environment.",
+      "Adapter can create an allowed test product and return a target identifier.",
+      "Technical architect",
+      20.8,
+      26,
+      31.2
+    ],
+    [
+      "4 Build",
+      "4.5",
+      "Build batch orchestration and audit log",
+      "Process rows independently, capture status and correlation IDs, and place ambiguous outcomes into reconciliation.",
+      "Batch result report with success, rejection and uncertain states.",
+      "Integration developer",
+      17.6,
+      22,
+      26.4
+    ],
+    [
+      "4 Build",
+      "4.6",
+      "Build configuration and run interface",
+      "Provide a simple command or minimal screen to select a file, start a batch and inspect results.",
+      "Repeatable operator workflow and example configuration.",
+      "Integration developer",
+      19.2,
+      24,
+      28.8
+    ],
+    [
+      "5 Test",
+      "5.1",
+      "Prepare test plan and test data",
+      "Prepare 12 scenario-based cases and a synthetic product file, including invalid, duplicate and API-failure cases.",
+      "Approved test cases and synthetic input data.",
+      "QA / documentation",
+      9.6,
+      12,
+      14.4
+    ],
+    [
+      "5 Test",
+      "5.2",
+      "Run unit and component tests",
+      "Test parser, validation, mapping, duplicate detection and adapter behavior in isolation.",
+      "Test execution log and defect list.",
+      "QA / documentation",
+      9.6,
+      12,
+      14.4
+    ],
+    [
+      "5 Test",
+      "5.3",
+      "Run end-to-end integration tests",
+      "Test the full path against a safe Odoo sandbox and verify target records and logs.",
+      "Evidence for each case, including retry/reconciliation behavior.",
+      "QA / documentation",
+      11.2,
+      14,
+      16.8
+    ],
+    [
+      "5 Test",
+      "5.4",
+      "Fix defects and repeat failed tests",
+      "Prioritize defects by data loss, duplicate creation, blocking errors and usability; rerun affected cases.",
+      "Closed or accepted defect list and retest evidence.",
+      "QA / documentation",
+      6.4,
+      8,
+      9.6
+    ],
+    [
+      "5 Test",
+      "5.5",
+      "Conduct acceptance demonstration",
+      "Demonstrate valid import, rejected rows, duplicate prevention and traceable outcome to the reviewer.",
+      "Acceptance record or documented open issues.",
+      "QA / documentation",
+      4,
+      5,
+      6
+    ],
+    [
+      "1 Initiation",
+      "1.5",
+      "Control the project and report progress",
+      "Maintain MS Project baseline, issue/decision log, weekly status, scope control and risk review across 12 weeks.",
+      "Updated schedule, dashboard, change log and meeting notes.",
+      "PM / BA",
+      28.8,
+      36,
+      43.2
+    ],
+    [
+      "6 Handover",
+      "6.1",
+      "Prepare installation and user guide",
+      "Document prerequisites, configuration, safe test procedure, results and known limitations.",
+      "Guide that another member can follow.",
+      "QA / documentation",
+      4.8,
+      6,
+      7.2
+    ],
+    [
+      "6 Handover",
+      "6.2",
+      "Prepare final report, slides and demo",
+      "Connect project evidence to the assignment criteria and distinguish actual test results from estimates.",
+      "Report, presentation and reproducible demo.",
+      "QA / documentation",
+      11.2,
+      14,
+      16.8
+    ],
+    [
+      "6 Handover",
+      "6.3",
+      "Close and capture lessons learned",
+      "Review acceptance, remaining risks, effort variance and reusable learning.",
+      "Closure note and lessons learned.",
+      "PM / BA",
+      4,
+      5,
+      6
+    ]
+  ],
+  "activities": [
+    [
+      1,
+      "1.1",
+      "Confirm project scope and charter",
+      2,
+      "",
+      "PM / BA",
+      6,
+      1,
+      1,
+      "M1 scope and charter agreed"
+    ],
+    [
+      2,
+      "1.2",
+      "Identify stakeholders and collect requirements",
+      4,
+      "1",
+      "PM / BA",
+      14,
+      1,
+      2,
+      "User needs and requirements"
+    ],
+    [
+      3,
+      "1.3",
+      "Profile Excel data and Odoo product fields",
+      3,
+      "1",
+      "PM / BA",
+      12,
+      1,
+      2,
+      "Sample data and field inventory"
+    ],
+    [
+      4,
+      "1.4",
+      "Prove Odoo API access",
+      4,
+      "1",
+      "Technical architect",
+      14,
+      2,
+      2,
+      "M2 API access proof or fallback"
+    ],
+    [
+      5,
+      "2.1",
+      "Approve data dictionary and acceptance criteria",
+      3,
+      "2,3,4",
+      "PM / BA",
+      12,
+      3,
+      3,
+      "Mapping and acceptance baseline"
+    ],
+    [
+      6,
+      "3.1",
+      "Design modular middleware architecture",
+      4,
+      "4,5",
+      "Technical architect",
+      12,
+      3,
+      3,
+      "Architecture and interfaces"
+    ],
+    [
+      7,
+      "3.2",
+      "Design security and failure handling",
+      2,
+      "6",
+      "Technical architect",
+      8,
+      4,
+      4,
+      "Credential and recovery design"
+    ],
+    [
+      8,
+      "5.1",
+      "Prepare test plan and test data",
+      3,
+      "5",
+      "QA / documentation",
+      12,
+      4,
+      5,
+      "12 proposed test cases"
+    ],
+    [
+      9,
+      "4.1",
+      "Build Excel parser",
+      5,
+      "6,7",
+      "Integration developer",
+      20,
+      5,
+      6,
+      "Parser with row tracking"
+    ],
+    [
+      10,
+      "4.2",
+      "Build validation and duplicate checks",
+      5,
+      "5,7",
+      "QA / documentation",
+      20,
+      5,
+      6,
+      "Validation rules"
+    ],
+    [
+      11,
+      "4.3",
+      "Build field mapping and transformation",
+      5,
+      "5,6",
+      "Integration developer",
+      18,
+      6,
+      7,
+      "Field transformation"
+    ],
+    [
+      12,
+      "4.4",
+      "Build Odoo adapter and authentication",
+      6,
+      "4,6",
+      "Technical architect",
+      26,
+      5,
+      7,
+      "Safe test write"
+    ],
+    [
+      13,
+      "4.5",
+      "Build batch orchestration and audit log",
+      5,
+      "9,10,11,12",
+      "Integration developer",
+      22,
+      7,
+      8,
+      "M3 end-to-end MVP feature complete"
+    ],
+    [
+      14,
+      "4.6",
+      "Build configuration and run interface",
+      6,
+      "13",
+      "Integration developer",
+      24,
+      8,
+      9,
+      "Repeatable operator workflow"
+    ],
+    [
+      15,
+      "5.2",
+      "Run unit and component tests",
+      3,
+      "9,10,11,12",
+      "QA / documentation",
+      12,
+      8,
+      9,
+      "Unit/component results"
+    ],
+    [
+      16,
+      "5.3",
+      "Run end-to-end integration tests",
+      4,
+      "8,13,14,15",
+      "QA / documentation",
+      14,
+      9,
+      10,
+      "M4 integration test evidence"
+    ],
+    [
+      17,
+      "5.4",
+      "Fix defects and repeat failed tests",
+      3,
+      "16",
+      "QA / documentation",
+      8,
+      10,
+      11,
+      "Retest and defect disposition"
+    ],
+    [
+      18,
+      "5.5",
+      "Conduct acceptance demonstration",
+      2,
+      "17",
+      "QA / documentation",
+      5,
+      11,
+      11,
+      "M5 acceptance demo"
+    ],
+    [
+      19,
+      "1.5",
+      "Control the project and report progress",
+      60,
+      "",
+      "PM / BA",
+      36,
+      1,
+      12,
+      "Weekly; parallel from project start; effort included in baseline"
+    ],
+    [
+      20,
+      "6.1",
+      "Prepare installation and user guide",
+      3,
+      "14,17",
+      "QA / documentation",
+      6,
+      10,
+      11,
+      "Installation and user guide"
+    ],
+    [
+      21,
+      "6.2",
+      "Prepare final report, slides and demo",
+      5,
+      "18,20",
+      "QA / documentation",
+      14,
+      10,
+      12,
+      "M6 final handover"
+    ],
+    [
+      22,
+      "6.3",
+      "Close and capture lessons learned",
+      1,
+      "21",
+      "PM / BA",
+      5,
+      12,
+      12,
+      "Lessons learned and closeout"
+    ]
+  ],
+  "risks": [
+    [
+      "R01",
+      "Odoo API access or permissions unavailable",
+      "Sandbox, API capability or service-account rights do not support the required safe write.",
+      "Prototype integration cannot be demonstrated.",
+      4,
+      5,
+      "Technical architect",
+      "Run a connection proof by Week 2. If blocked, use a controlled mock for development and label real Odoo connection as not verified.",
+      "No successful authenticated test write by end of Week 2.",
+      "High"
+    ],
+    [
+      "R02",
+      "Data quality and field mapping are harder than planned",
+      "Excel formats vary; product fields or required relationships are unclear.",
+      "Import rejects many records or creates incorrect product data.",
+      4,
+      4,
+      "PM / BA",
+      "Profile sample data early; freeze one template; keep invalid rows out of Odoo; get a domain reviewer to approve mapping.",
+      "More than 10% of sample rows require manual interpretation.",
+      "High"
+    ],
+    [
+      "R03",
+      "Scope expands beyond the MVP",
+      "Requests add two-way sync, more ERP systems, extra records or real-time behavior.",
+      "Schedule and testing capacity become insufficient.",
+      4,
+      4,
+      "Project Manager",
+      "Use a change log and impact estimate; defer additions unless scope, schedule and acceptance are re-approved.",
+      "Any new system, data entity or direction is requested after Week 3.",
+      "High"
+    ],
+    [
+      "R04",
+      "Duplicate or incorrect Odoo records are created",
+      "Retry after an uncertain response or weak duplicate key causes repeated creates.",
+      "Data integrity is affected and demo evidence becomes unreliable.",
+      3,
+      5,
+      "Technical architect",
+      "Use a stable import/batch key, reject existing SKUs, test timeout-after-commit and keep uncertain outcomes for manual reconciliation.",
+      "Same import reference is submitted twice or result is unknown after timeout.",
+      "High"
+    ],
+    [
+      "R05",
+      "Key member availability drops",
+      "Course workload, illness or schedule conflict reduces contribution.",
+      "Critical activities wait for one person; review and testing are compressed.",
+      3,
+      4,
+      "Project Manager",
+      "Assign a backup for connector and testing; maintain weekly work cap and shared runbook; level resources in MS Project.",
+      "A critical task has no active owner for one week.",
+      "Medium"
+    ],
+    [
+      "R06",
+      "Credentials or test data are exposed",
+      "Secrets are committed or real customer/vendor data is used in development.",
+      "Unauthorized access or privacy impact.",
+      2,
+      5,
+      "Technical architect",
+      "Use synthetic data; store secrets outside source control; restrict sandbox rights; rotate exposed credentials.",
+      "Secret appears in repository, screenshot or shared report.",
+      "Medium"
+    ],
+    [
+      "R07",
+      "Effort estimate is too optimistic",
+      "Early assumptions omit mapping, failure handling, documentation or integration tests.",
+      "Forecast exceeds available 12-week capacity.",
+      3,
+      4,
+      "Project Manager",
+      "Use PERT ranges and a 15% contingency reserve; compare actual hours weekly; escalate at SPI below 0.90.",
+      "Actual effort exceeds plan by 10% at a milestone.",
+      "Medium"
+    ],
+    [
+      "R08",
+      "End-to-end tests fail late",
+      "Components are developed in isolation and API contract differences surface near integration.",
+      "Retesting and fixing consume handover time.",
+      3,
+      4,
+      "QA / documentation",
+      "Create a thin end-to-end slice by Week 5; run sandbox integration at least weekly; reserve Weeks 10–11 for fixes.",
+      "More than two critical integration defects remain at Week 9.",
+      "Medium"
+    ]
+  ],
+  "comms": [
+    [
+      "Weekly progress and blockers",
+      "Project Manager",
+      "All team members",
+      "Weekly, 30 min",
+      "In-person/Teams",
+      "Status, completed work, next work, blockers",
+      "Owner assigned and due date recorded"
+    ],
+    [
+      "Scope, acceptance and change decisions",
+      "Project Manager",
+      "Instructor, team, user representative",
+      "At kickoff and each change",
+      "Meeting + decision log",
+      "Decision, alternatives, impact on scope/schedule/cost",
+      "Decision recorded before work starts"
+    ],
+    [
+      "Requirements and data mapping review",
+      "PM / BA",
+      "User representative, Odoo administrator, architect",
+      "Weeks 1–3, then on change",
+      "Interview/workshop",
+      "Field dictionary and examples",
+      "Open mapping issues assigned"
+    ],
+    [
+      "Architecture and API access proof",
+      "Technical architect",
+      "Developer, Odoo administrator, PM",
+      "Weeks 2–4; then at integration gates",
+      "Technical review",
+      "Diagram, API result, security note",
+      "Go/no-go or fallback decision"
+    ],
+    [
+      "Risk review",
+      "Project Manager",
+      "Team and instructor",
+      "Weekly",
+      "Risk register",
+      "Top risks, triggers, owners and response actions",
+      "Escalate high risks with decision need"
+    ],
+    [
+      "Test execution and defects",
+      "QA / documentation",
+      "Developer, architect, PM",
+      "At each test cycle",
+      "Test log / issue tracker",
+      "Case ID, expected/actual, evidence, severity",
+      "Critical defect owner assigned same day"
+    ],
+    [
+      "Milestone review/demo",
+      "Project Manager",
+      "Instructor, team, user representative",
+      "At M1–M6",
+      "Demo + short status note",
+      "Deliverable, acceptance evidence, open items",
+      "Acceptance or remediation action captured"
+    ],
+    [
+      "Final handover",
+      "Project Manager",
+      "Instructor and team",
+      "Week 12",
+      "Report, workbook and demo",
+      "Baseline vs actual, results, limitations, lessons",
+      "Artifacts and remaining issues acknowledged"
+    ]
+  ],
+  "tests": [
+    [
+      "T01",
+      "Valid .xlsx with required columns",
+      "10 valid unique synthetic products",
+      "Import batch",
+      "All records created; row-level target IDs logged",
+      "Planned; not executed"
+    ],
+    [
+      "T02",
+      "Required product name missing",
+      "One row with blank name",
+      "Validate row",
+      "Row rejected with field-specific message",
+      "Planned; not executed"
+    ],
+    [
+      "T03",
+      "Invalid price type or negative price",
+      "One row with text/negative price",
+      "Validate row",
+      "Row rejected; no Odoo create call",
+      "Planned; not executed"
+    ],
+    [
+      "T04",
+      "Duplicate SKU within file",
+      "Two rows share SKU",
+      "Validate batch",
+      "Duplicate rows flagged; no ambiguous create",
+      "Planned; not executed"
+    ],
+    [
+      "T05",
+      "SKU already exists in target",
+      "Sandbox has matching SKU",
+      "Run import",
+      "Existing record is rejected; no update in MVP",
+      "Planned; not executed"
+    ],
+    [
+      "T06",
+      "Unexpected header or missing column",
+      "Rename/remove one header",
+      "Parse file",
+      "Batch stops or affected rows are rejected with clear error",
+      "Planned; not executed"
+    ],
+    [
+      "T07",
+      "API authentication rejected",
+      "Invalid test credential",
+      "Submit valid row",
+      "No record created; auth error logged without secret",
+      "Planned; not executed"
+    ],
+    [
+      "T08",
+      "Network fails before target commit",
+      "Inject pre-commit timeout",
+      "Retry same row reference",
+      "Safe retry creates no more than one product",
+      "Planned; not executed"
+    ],
+    [
+      "T09",
+      "Target commits but response is lost",
+      "Inject after-commit timeout",
+      "Retry/reconcile same row reference",
+      "System detects uncertain state and avoids duplicate create",
+      "Planned; not executed"
+    ],
+    [
+      "T10",
+      "Partial batch failure",
+      "Mix valid and invalid rows",
+      "Submit batch",
+      "Each row has an independent outcome; successes remain traceable",
+      "Planned; not executed"
+    ],
+    [
+      "T11",
+      "Audit completeness",
+      "Successful and rejected rows",
+      "Review batch log",
+      "Batch ID, source row, status, error/target ID and time are present",
+      "Planned; not executed"
+    ],
+    [
+      "T12",
+      "Repeat batch submission",
+      "Submit same batch reference twice",
+      "Rerun import",
+      "Duplicate submission is blocked or safely recognized",
+      "Planned; not executed"
+    ]
+  ],
+  "sources": [
+    [
+      "Schwalbe, K. (2019). Information Technology Project Management, 9th ed. Cengage.",
+      "Ch. 4–7, 9–11, 13",
+      "Theory for charter, scope, schedule, cost, resources, communications, risk and stakeholders.",
+      "https://www.cengage.com/c/information-technology-project-management-9e-schwalbe/"
+    ],
+    [
+      "Silva, J. P., Silva, N., & Rocha, J. (2011). Online, iterative and interactive integration of legacy system and up-to-date ERP: a case study and systematization. INFORUM 2011.",
+      "Single SME integration case",
+      "Case reports a 35-hour one-person-week expectation, a two-person-week unsuccessful pilot, and data-quality transformations that could not handle about 20% of 2,702 records. Used as a cautionary analogy for early profiling, broad effort ranges and a test buffer; not a direct estimate for this much smaller student MVP.",
+      "https://www.academia.edu/7322292/Online_iterative_and_interactive_integration_of_legacy_system_and_up-to-date_ERP_a_case_study_and_systematization"
+    ],
+    [
+      "Rosa, W. et al. (2013). COTS integration and estimation for ERP. Journal of Systems and Software, 86(2), 538–550.",
+      "20 US federal ERP programs",
+      "Study links RICE object counts to integration effort and schedule. Its model population and size range differ from a single educational connector, so the model is not numerically applied; the project uses interface/data-conversion/test-object decomposition instead. DOI: 10.1016/j.jss.2012.09.030.",
+      "https://doi.org/10.1016/j.jss.2012.09.030"
+    ],
+    [
+      "Kong, X. (2025). User-Centered Design of an ERP Integration Framework for Trading SMEs: Customizing Microsoft Dynamics 365 BC and Integrating Lark. Aalto University thesis.",
+      "Architecture and user-centered design reference",
+      "A related project context for user-centered ERP integration. The official thesis title listing is used only for contextual comparison, not as an effort benchmark.",
+      "https://aaltodoc.aalto.fi/items/89435701-13ac-48f7-90df-4283e1a429fd"
+    ],
+    [
+      "User-supplied draft Khoa_luan_ERP_Integration_Framework.docx (27 pages; local Library item)",
+      "Project design draft; simulated evidence only",
+      "Draft describes SME Bridge Lab, transactional outbox, worker, idempotency, mock ERP and 12 tests/180 synthetic orders. It explicitly states the Odoo adapter is unverified on a live Odoo server and mock results are not field evidence. Used as a design input, not independent project data.",
+      "User-supplied project document"
+    ]
+  ]
+}
